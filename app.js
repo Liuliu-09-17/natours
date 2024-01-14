@@ -18,7 +18,7 @@ const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 
-
+// Start express app
 const app = express();
 
 app.set('view engine', 'pug'); //npm i pug
@@ -116,7 +116,6 @@ app.use('/api/v1/tours', tourRouter); // mount routers
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/bookings', bookingRouter);
-
 
 app.all('*', (req, res, next) => {
   // * means all situation urls, get, patch, post... app.get, app.patch....

@@ -8,6 +8,7 @@ export const login = async (email, password) => {
     const res = await axios({
       method: 'POST',
       url: 'http://127.0.0.1:3000/api/v1/users/login',
+      // 如果要deeply的话 就删掉 http://127.0.0.1:3000
       data: {
         email,
         password,

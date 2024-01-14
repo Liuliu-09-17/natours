@@ -8,6 +8,7 @@ const mongoSanitize = require('express-mongo-sanitize'); // npm i express-mongo-
 const xss = require('xss-clean'); // npm i xss-clean
 const hpp = require('hpp'); //npm i hpp
 const cookieParser = require('cookie-parser');
+const compression = require('compression') // deploy to Heroku // npm i compression
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -101,6 +102,9 @@ app.use(
 //   console.log('Hello form the middleware 🤟');
 //   next(); //没有next，他就卡在这里了
 // });
+
+// for deployment to Heroku
+app.use(compression());
 
 // Test middleware
 app.use((req, res, next) => {
